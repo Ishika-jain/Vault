@@ -1,0 +1,54 @@
+
+.navbar-custom .nav-link {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.navbar-custom .nav-item:not(:last-child) {
+  margin-right: 60px;
+}
+.gradient-bg {
+  height: 100vh;
+  background: linear-gradient( #fff 3%,  #8a73ff 50%, rgb(5, 0, 109) 100%);
+
+}
+
+
+.bgimg{
+  width: 65%;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 1;
+}
+
+.content-container {
+  position: relative;
+  top: -50px;
+}
+
+
+
+
+.login-card,
+.signup-card {
+  margin-top: -100px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.login-signup-container {
+  position: relative;
+  z-index: 1;
+}
+
+.login-signup-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+

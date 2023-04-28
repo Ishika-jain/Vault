@@ -11,8 +11,8 @@ const LandingPage = () => {
         <Home />
         <About />
         <Contact />
-        
       </div>
+      <div className="gradient-bg2"></div>
     </>
   );
 };

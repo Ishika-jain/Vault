@@ -1,7 +1,11 @@
 
+.screen{
+  overflow-x: hidden;
+}
 .navbar-custom .nav-link {
   font-size: 20px;
   padding: 20px;
+  color: black;
 }
 
 .navbar-custom .nav-item:not(:last-child) {
@@ -9,7 +13,13 @@
 }
 .gradient-bg {
   height: 100vh;
-  background: linear-gradient( #fff 3%,  #8a73ff 50%, rgb(5, 0, 109) 100%);
+  background: linear-gradient( to bottom, #fff 3%,  #8a73ff 50%, rgb(5, 0, 109) 100% );
+
+}
+
+.gradient-bg2{
+  height: 100vh;
+  background: linear-gradient( to bottom, rgb(5, 0, 110) 10%,  #8a73ff 70%,  #fff 100%);
 
 }
 
@@ -18,15 +28,25 @@
   width: 65%;
   position: absolute;
   bottom: 2rem;
-  left: 2rem;
+  left: 0.2rem;
   z-index: 1;
 }
 
 .content-container {
-  position: relative;
-  top: -50px;
+  position: absolute;
+  right: 10rem;
+  top: 15rem;
+  text-align: center;
+  
 }
 
+.nav-section1{
+  margin-left: 20rem;
+}
+
+.nav-section2{
+  margin-left: 20rem;
+}
 
 
 

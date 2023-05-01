@@ -1,5 +1,5 @@
 import React from "react";
-import "./Layout.css";
+import  '../index.css'
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 const Navibar = () => {
   return (

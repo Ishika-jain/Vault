@@ -2,15 +2,15 @@ import React from 'react'
 import  Navbar  from './Navibar'
 import Footer from './Footer'
 import Center from './Center'
-import  './Layout.css'
+import  '../index.css'
 
 
 const MainSection = () => {
   return (
-    <div style={{width: "100vw"}}>
+    <div style={{width: "90vw"}}>
       <Navbar/> 
       <Center/>
-      <Footer/>
+      
     </div>
   )
 }

@@ -15,6 +15,7 @@ code {
 .sidebar {
   width: 10%;
   height: 100vh;
+  background: red;
 }
 
 .navibar {
@@ -31,7 +32,7 @@ code {
 }
 
 .center {
-  background: #000;
+  background: #f9c1c1;
   height: 85%;
 }
 
@@ -64,7 +65,7 @@ code {
 .search-box {
   width: 10rem;
   height: 2rem;
-  background: rgb(51, 40, 40);
+  background: rgb(133, 107, 107);
   margin: 0rem 1rem;
   border-radius: 25px;
 }
@@ -359,3 +360,18 @@ code {
     padding: 0 10px 0 10px;
     border-radius: 10px;
   }
+
+
+.sidebar-item{
+  text-decoration: none;
+  margin: 1px;
+}
+
+.sidebar-list{
+  background: #000;
+  display: flex;
+  margin-left: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

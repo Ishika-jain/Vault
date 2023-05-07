@@ -1,6 +1,10 @@
 import React from "react";
 import  '../index.css'
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+
+
 const Navibar = () => {
   return (
     <div className="navibar">
@@ -12,7 +16,12 @@ const Navibar = () => {
         </Breadcrumb>
       </div>
       <div className="right-icons">
-        <div className="search-box"></div>
+        <DarkModeOutlinedIcon/>
+        <div className="search-box">
+
+        <SearchOutlinedIcon/>
+      
+        </div>
         <div className="toggle-mode"></div>
         <div className="profile-icon"></div>
       </div>

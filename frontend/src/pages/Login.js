@@ -21,7 +21,7 @@ export default function LoginSignup() {
       <div className="parentlogin">
 
         <div className="loginimage">
-        <img src={log} className="loginimage"/>
+        <img src={log} alt='and' className="loginimage"/>
         </div>
         <div className="login-form">
 

@@ -15,7 +15,7 @@ const Home = () => {
                 <Nav.Link href="#">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="#">About</Nav.Link>
+                <Nav.Link href="">About</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link href="#">Contact</Nav.Link>

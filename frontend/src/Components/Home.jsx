@@ -2,7 +2,59 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import bg from "../images/backg_prev_ui.png";
 import { Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import Modal from "react-modal";
+import LoginSignup from "../pages/LoginSignup";
+import { useNavigate } from "react-router-dom";
+
+
+
+Modal.setAppElement("#root");
 const Home = () => {
+
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    navigate("/homepage");
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  
+
+  function openModal() {
+    setModalIsOpen(true);
+  }
+
+  function closeModal() {
+    setModalIsOpen(false);
+  }
+
+  
+
+  const customStyles = {
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+    },
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      padding: "-10px",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      borderRadius: "20px",
+      background: "rgba(255, 255, 255, 0.5)",
+      
+          },
+  };
+
   return (
     <div className="screen">
       <Navbar className="navbar-custom">
@@ -21,8 +73,15 @@ const Home = () => {
                 <Nav.Link href="#">Contact</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/login">
-                  <Button variant="warning">Login</Button>
+                <Nav.Link >
+                  <Button variant="warning" onClick={openModal}>Login</Button>
+                   <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <LoginSignup  onLogin={handleLogin}/>
+      </Modal>
                 </Nav.Link>
               </Nav.Item>
             </Nav>

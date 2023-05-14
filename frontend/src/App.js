@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./pages/LandingPage";
 import Homepage from "./pages/Homepage";
-import Login from "./pages/Login";
 import Center from "./Components/Center";
 import Folder from "./Components/Folder";
 import Documents from "./Components/Documents";
@@ -12,16 +12,20 @@ import Referals from "./Components/Referals";
 import Calendar from "./Components/Calendar";
 import Notes from "./Components/Notes";
 import Track from "./Components/Track";
+import Modalui from "./ui/Modalui";
+import LoginSignup from "./pages/LoginSignup";
 
 function App() {
+ 
+
   return (
     <>
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/homepage" element={<Homepage />}>
+            <Route exact path="/" element={<LandingPage />} />
+
+            <Route path="/homepage/*" element={<Homepage />}>
               <Route path="main" element={<Center />} />
               <Route path="folder" element={<Folder />} />
               <Route path="documents" element={<Documents />} />

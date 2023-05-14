@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = (props) => {
   return (
-    <div className="sidebar" style={{ borderRight: "1px solid black" }}>
+    <div className="sidebar" style={{ borderRight: "1px solid black", position:"fixed"}}>
       <div style={{ height: "10%", background: "white", display: "flex" }}>
        
       <Link to="/homepage/main" className="sidebar-item">

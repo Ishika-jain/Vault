@@ -1,8 +1,14 @@
 import React from 'react'
+import Modalui from '../ui/Modalui'
+
 
 const Certificates = () => {
   return (
-    <div>Certificates</div>
+    <div>
+
+<Modalui/>
+
+    </div>
   )
 }
 

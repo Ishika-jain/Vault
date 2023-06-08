@@ -14,7 +14,7 @@ import { Route, Routes } from "react-router-dom";
 
 const MainSection = () => {
   return (
-    <div style={{ paddingLeft: "10%", width:"100%" }}>
+    <div style={{ paddingLeft: "12%", width:"100%"}}>
     <Navibar />
     <Routes>
       <Route path="main" element={<Center/>}/>

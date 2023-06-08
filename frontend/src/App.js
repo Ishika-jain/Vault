@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./pages/LandingPage";
 import Homepage from "./pages/Homepage";
@@ -12,20 +14,36 @@ import Referals from "./Components/Referals";
 import Calendar from "./Components/Calendar";
 import Notes from "./Components/Notes";
 import Track from "./Components/Track";
-import Modalui from "./ui/Modalui";
-import LoginSignup from "./pages/LoginSignup";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "./Context/AuthnContext";
+
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    axios.get('/api/login')
+      .then(response => {
+        // setUser(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
  
 
   return (
     <>
+     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route exact path="/" element={<LandingPage />} />
-
-            <Route path="/homepage/*" element={<Homepage />}>
+            <Route exact path="/" element={<LandingPage />}  />
+            <Route path="/homepage/:username/*" element={isLoggedIn ? <Homepage /> : <Navigate to="/" />} >
               <Route path="main" element={<Center />} />
               <Route path="folder" element={<Folder />} />
               <Route path="documents" element={<Documents />} />
@@ -35,10 +53,11 @@ function App() {
               <Route path="calendar" element={<Calendar />} />
               <Route path="notes" element={<Notes />} />
               <Route path="track" element={<Track />} />
-            </Route>
+              </Route>
           </Routes>
         </div>
       </BrowserRouter>
+     </AuthContext.Provider>
     </>
   );
 }

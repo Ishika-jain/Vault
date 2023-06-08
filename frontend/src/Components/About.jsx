@@ -2,7 +2,7 @@ import React from "react";
 import "../index.css"
 const About = () => {
   return (
-    <div >
+    <div id="Aboutus">
       <h1 className="title" style={{textAlign:"center", marginTop:"50px", fontSize:"40px"}}>About Us</h1>
       <div className="about-us-container glass-effect">
       <div className="content" style={{padding:"50px"}}>

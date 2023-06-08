@@ -15,12 +15,10 @@ code {
 .sidebar {
   width: 10%;
   height: 100vh;
-  background: red;
 }
 
 .navibar {
   background: white;
-  height: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -97,11 +95,13 @@ code {
 .screen-child{
   display: flex;
   justify-content: flex-end;
+  padding: 2px;
+  
  
 }
 
 .navbar-custom .nav-item:not(:last-child) {
-  margin-right: 60px;
+  margin-right: 10px;
 }
 .gradient-bg {
   height: 300vh;
@@ -367,7 +367,6 @@ code {
 }
 
 .sidebar-list{
-  background: #000;
   display: flex;
   margin-left: 0px;
   align-items: center;

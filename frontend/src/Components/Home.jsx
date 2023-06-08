@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import bg from "../images/backg_prev_ui.png";
 import { Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 import LoginSignup from "../pages/LoginSignup";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ Modal.setAppElement("#root");
 const Home = () => {
 
   const navigate = useNavigate();
+  const [user, setLoginUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
@@ -20,9 +21,6 @@ const Home = () => {
     navigate("/homepage");
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   
@@ -67,10 +65,16 @@ const Home = () => {
                 <Nav.Link href="#">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="">About</Nav.Link>
+                <Nav.Link href="#Aboutus">About</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="#">Contact</Nav.Link>
+                <Nav.Link href="#Features">Features</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#reviews">Reviews</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#contact">Contact</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link >
@@ -80,7 +84,7 @@ const Home = () => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <LoginSignup  onLogin={handleLogin}/>
+        <LoginSignup  onLogin={handleLogin} setLoginUser={setLoginUser}/>
       </Modal>
                 </Nav.Link>
               </Nav.Item>

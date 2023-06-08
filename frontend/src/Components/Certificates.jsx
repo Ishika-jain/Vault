@@ -1,12 +1,12 @@
 import React from 'react'
-import Modalui from '../ui/Modalui'
+import UploadFiles from "./UploadFiles";
 
 
 const Certificates = () => {
   return (
     <div>
+<UploadFiles/>
 
-<Modalui/>
 
     </div>
   )

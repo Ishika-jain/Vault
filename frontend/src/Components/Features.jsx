@@ -19,12 +19,11 @@ const featurearray = [
 ];
 const features = () => {
   return (
-    <div > 
+    <div id='Features' > 
         <h2 style={{textAlign:"center", margin:"5rem",  fontSize:"40px"}}>Features</h2>
         <div style={{display:"flex", justifyContent:"space-between", margin:"50px"}}>
 
         {featurearray.map((feature)=>{
-            console.log(feature)
             return (
                 <div key={feature.id} style={{width:"30%", height:"15rem", margin:"10px", padding:"10px", background:"#340ba7b0", display:"flex", alignItems:"center", borderRadius:"10px"}}>
                     <div>{feature.id}</div>

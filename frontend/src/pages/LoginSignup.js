@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import { Button, TextField, Link } from "@material-ui/core";
-import log from "../images/bg.png";
+// import log from "../images/bg.png";
 import axios from "axios";
 import "../index.css";
+import hi from "../images/hi.gif"
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthnContext";
+import { useNavigate } from 'react-router-dom';
 
-const LoginSignup = ({ onLogin }) => {
+
+const LoginSignup = ({ onLogin , setLoginUser }) => {
+
+
+  const { setIsLoggedIn } = useContext(AuthContext);
+
   const [isSignup, setIsSignup] = useState(false);
   const [user, setUser] = useState({
     name:"",
@@ -13,6 +22,8 @@ const LoginSignup = ({ onLogin }) => {
     confirmPassword:""
   })
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
 
 
   const handleChange = (event) => {
@@ -27,7 +38,10 @@ const LoginSignup = ({ onLogin }) => {
     if (name && email && password && (password===confirmPassword)){
       try {
         await axios.post("http://localhost:5000/api/signup", user)
-        .then(res=>console.log(res.data.message))
+        .then(res=>
+          {console.log(res.data.message)
+            navigate(`/homepage/${res.data.user.username}`);
+          })
         
         onLogin();
       } catch (err) {
@@ -37,28 +51,31 @@ const LoginSignup = ({ onLogin }) => {
     
   };
 
-  const handleLogin = async(e) => {
-    e.preventDefault();
-    const {email, password} = user;
-    if (email && password ){
-      try {
-        await axios.post("http://localhost:5000/api/login", user)
-        .then(res=>console.log(res.data.message))
 
-        onLogin();
-      } catch (err) {
-        setError("Invalid email or password");
-      }
+const handleLogin = async (e) => {
+  e.preventDefault();
+  const { email, password } = user;
+  if (email && password) {
+    try {
+      await axios.post("http://localhost:5000/api/login", user)
+        .then(res => {
+          setUser(res.data.user);
+          setIsLoggedIn(true);
+          navigate(`/homepage/${res.data.user.username}`);
+        });
+    } catch (err) {
+      setError("Invalid email or password");
     }
-    
-  };
+  }
+};
 
 
   return (
     <div className="login-container">
       <div className="parentlogin">
         <div className="loginimage">
-          <img src={log} alt="and" className="loginimage" />
+          <img src={hi} alt="and" className="loginimage" />
+         
         </div>
         <div className="login-form">
           <h1 className="login-header">{isSignup ? "Sign up" : "Sign in"}</h1> 

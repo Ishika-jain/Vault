@@ -1,8 +1,12 @@
 import React from 'react'
+import UploadFiles from "./UploadFiles";
+
 
 const Referals = () => {
   return (
-    <div>Referals</div>
+    <div>
+        <UploadFiles/>
+    </div>
   )
 }
 

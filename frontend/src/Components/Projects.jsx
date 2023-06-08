@@ -1,8 +1,9 @@
 import React from 'react'
+import UploadFiles from './UploadFiles'
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div><UploadFiles/></div>
   )
 }
 

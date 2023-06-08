@@ -21,7 +21,7 @@ const Reviews = () => {
   ];
 
   return (
-    <div>
+    <div id="reviews">
 
       <h2 className="title" style={{textAlign:"center",  fontSize:"40px"}}>Reviews</h2>
     <div className="reviews-container glass-effect">

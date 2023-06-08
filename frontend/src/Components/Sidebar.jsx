@@ -8,7 +8,6 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import NotesIcon from "@mui/icons-material/Notes";
 import ArtTrackIcon from "@mui/icons-material/ArtTrack";
 
 import { Link } from "react-router-dom";
@@ -72,16 +71,16 @@ const Sidebar = (props) => {
               <CalendarMonthIcon />
               <span>Calendar</span>
             </li>
-          </Link>
+          </Link> */}
 
-          <Link to={`/homepage/${username}/notes`} className="sidebar-item">
+          <Link to={`/homepage/${username}/calendar`} className="sidebar-item">
             <li className={`sidebar-list ${pathname.includes("/notes") ? "active" : ""}`}>
-              <NotesIcon />
-              <span>Notes</span>
+              <CalendarMonthIcon />
+              <span>Calendar</span>
             </li>
           </Link>
 
-          <Link to={`/homepage/${username}/track`} className="sidebar-item">
+          {/* <Link to={`/homepage/${username}/track`} className="sidebar-item">
             <li className={`sidebar-list ${pathname.includes("/track") ? "active" : ""}`}>
               <ArtTrackIcon />
               <span>Track</span>

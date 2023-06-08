@@ -41,7 +41,7 @@ const Folder = () => {
       <div style={{ display: "flex", flexDirection: "row" }}>
         <img src={img} alt="Profile" style={{ width: "200px", height: "200px", borderRadius: "50%", marginLeft:"5%" }} />
         <div style={{ display: "block", width: "100%", textAlign: "center", marginBottom: "7%" }}>
-          <h2> welcome to {username}'s page </h2>
+          <h2> welcome, {username}! </h2>
           <div>
             <textarea id="description" rows="4" value={description} onChange={handleDescriptionChange} placeholder=" Something about me... " style={{ paddingTop: "2%", marginTop: "2%", resize: "none", width:"80%" }}>
               {" "}

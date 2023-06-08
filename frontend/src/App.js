@@ -11,7 +11,6 @@ import Documents from "./Components/Documents";
 import Projects from "./Components/Projects";
 import Certificates from "./Components/Certificates";
 import Referals from "./Components/Referals";
-import Calendar from "./Components/Calendar";
 import Notes from "./Components/Notes";
 import Track from "./Components/Track";
 import { Navigate } from "react-router-dom";
@@ -50,8 +49,7 @@ function App() {
               <Route path="projects" element={<Projects />} />
               <Route path="certificates" element={<Certificates />} />
               <Route path="referals" element={<Referals />} />
-              <Route path="calendar" element={<Calendar />} />
-              <Route path="notes" element={<Notes />} />
+              <Route path="calendar" element={<Notes />} />
               <Route path="track" element={<Track />} />
               </Route>
           </Routes>

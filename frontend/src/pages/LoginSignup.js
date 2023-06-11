@@ -37,7 +37,7 @@ const LoginSignup = ({ onLogin , setLoginUser }) => {
     const {name, email, password, confirmPassword} = user;
     if (name && email && password && (password===confirmPassword)){
       try {
-        await axios.post("http://localhost:5000/api/signup", user)
+        await axios.post("https://vaultbackend.onrender.com/api/signup", user)
         .then(res=>
           {console.log(res.data.message)
             navigate(`/homepage/${res.data.user.username}`);
@@ -57,7 +57,7 @@ const handleLogin = async (e) => {
   const { email, password } = user;
   if (email && password) {
     try {
-      await axios.post("http://localhost:5000/api/login", user)
+      await axios.post("https://vaultbackend.onrender.com/api/login", user)
         .then(res => {
           setUser(res.data.user);
           setIsLoggedIn(true);

@@ -36,7 +36,7 @@ const UploadFiles = () => {
 
 
     await axios
-      .post(`http://localhost:5000/api/singleFile`, formData, {
+      .post(`https://vaultbackend.onrender.com/api/singleFile`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -48,23 +48,9 @@ const UploadFiles = () => {
         console.log(err);
       });
   };
-  
-  // const getSingleFile = async () => {
-  //   const response = await axios.get(`http://localhost:5000/api/getSingleFile`);
-  //   return response.data;
-  // };
-
-  // const getSingleFilesList = async () => {
-  //   try {
-  //     const filesList = await getSingleFile();
-  //     setSingleFiles(filesList);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const getSingleFile = async () => {
-    const response = await axios.get(`http://localhost:5000/api/getSingleFile/${username}/${lastPart}`);
+    const response = await axios.get(`https://vaultbackend.onrender.com/api/getSingleFile/${username}/${lastPart}`);
     return response.data;
   };
   
@@ -114,7 +100,7 @@ const UploadFiles = () => {
                 const name = file.filePath.replace(/\//g, "/");
                 const lastName = file.fileName;
                 const lastThree = lastName.substring(lastName.length - 3);
-                const fileRealPath = lastThree === "pdf" ? bg : `http://localhost:5000/${file.filePath}`;
+                const fileRealPath = lastThree === "pdf" ? bg : `https://vaultbackend.onrender.com/${file.filePath}`;
 
                 return (
                   <div style={{ width: "8vw", display: "flex", flexDirection: "column", marginBottom: "9%" }} key={file.filePath}>
@@ -126,7 +112,7 @@ const UploadFiles = () => {
                       key={index}
                       style={{ border: "1px black solid", margin: "10px" }}
                       onClick={(file) => {
-                        window.open(`http://localhost:5000/${name}`);
+                        window.open(`https://vaultbackend.onrender.com/${name}`);
                       }}
                     ></img>
                     <label>{getFileDisplayName(file.fileName)}</label>
@@ -134,7 +120,7 @@ const UploadFiles = () => {
                     {selectedImageIndex !== null && (
                       <div className="modal">
                         <div className="modal-content">
-                          <img src={`http://localhost:5000/${file.fileName}`} alt={`Full-sized ${selectedImageIndex}`} height={500} width={500} />
+                          <img src={`https://vaultbackend.onrender.com/${file.fileName}`} alt={`Full-sized ${selectedImageIndex}`} height={500} width={500} />
 
                           <button onClick={handleCloseModal}>Close</button>
                         </div>

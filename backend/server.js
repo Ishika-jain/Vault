@@ -7,6 +7,8 @@ const cors = require("cors");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const session = require("express-session");
+require("dotenv").config();
+
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +18,7 @@ app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   session({
-    secret: "f3b418618baf39187b0c79e8c4d6b51b428151ec36f7007f090fecb60cb82cf0",
+    secret: process.env.JWT_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -52,7 +54,7 @@ const userSchema = new Schema({
 
 const User = mongoose.model("User", userSchema);
 
-mongoose.connect("mongodb+srv://admin:admin@cluster0.01mgq59.mongodb.net/test", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => {
     console.log("Success: Connected to MongoDB");
   })
@@ -130,7 +132,7 @@ router.post("/signup", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
+ 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -170,6 +172,7 @@ router.post("/api/home", (req, res) => {
 
 app.use("/api", router);
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

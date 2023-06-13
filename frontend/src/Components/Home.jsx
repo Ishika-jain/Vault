@@ -7,13 +7,10 @@ import Modal from "react-modal";
 import LoginSignup from "../pages/LoginSignup";
 import { useNavigate } from "react-router-dom";
 
-
-
 Modal.setAppElement("#root");
 const Home = () => {
-
   const navigate = useNavigate();
-  const [user, setLoginUser] = useState({})
+  const [user, setLoginUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
@@ -21,9 +18,7 @@ const Home = () => {
     navigate("/homepage");
   };
 
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  
 
   function openModal() {
     setModalIsOpen(true);
@@ -32,8 +27,6 @@ const Home = () => {
   function closeModal() {
     setModalIsOpen(false);
   }
-
-  
 
   const customStyles = {
     overlay: {
@@ -49,14 +42,13 @@ const Home = () => {
       transform: "translate(-50%, -50%)",
       borderRadius: "20px",
       background: "rgba(255, 255, 255, 0.5)",
-      
-          },
+    },
   };
 
   return (
     <div className="screen">
       <Navbar className="navbar-custom">
-        <Container >
+        <Container>
           <Navbar.Brand href="#">My Brand</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav" className="screen-child">
@@ -77,35 +69,29 @@ const Home = () => {
                 <Nav.Link href="#contact">Contact</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link >
-                  <Button variant="warning" onClick={openModal}>Login</Button>
-                   <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-      >
-        <LoginSignup  onLogin={handleLogin} setLoginUser={setLoginUser}/>
-      </Modal>
+                <Nav.Link>
+                  <Button variant="warning" onClick={openModal}>
+                    Login
+                  </Button>
+                  <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
+                    <LoginSignup onLogin={handleLogin} setLoginUser={setLoginUser} />
+                  </Modal>
                 </Nav.Link>
               </Nav.Item>
             </Nav>
-            
-             
-             
-           
-            </Navbar.Collapse>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", height:"80vh", width :"90vw"}}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", height: "80vh", width: "90vw" }}>
         <div>
-        <img alt="bg" src={bg} className="bgimg"/>
+          <img alt="bg" src={bg} className="bgimg" />
         </div>
-        <div >
+        <div>
           <h1>Get Set Go!</h1>
           <br></br>
           <h4>Stay prepared for when Oppurtunity knocks.</h4>
           <br></br>
-          <Button variant="warning" size="lg">
+          <Button variant="warning" size="lg" onClick={openModal}>
             Join us here
           </Button>{" "}
         </div>

@@ -6,6 +6,7 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthnContext";
+import profile from "../images/bg.png";
 
 const Navibar = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Navibar = () => {
   };
 
   return (
-    <div className="navibar">
+    <div className="navibar" style={{ background: "#a5a5f9", height:"10%" }}>
       <div className="custom-breadcrumb">
         <Breadcrumb>
           <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
@@ -31,14 +32,20 @@ const Navibar = () => {
         <p> </p>
       </div>
       <div className="right-icons">
-        {/* <DarkModeOutlinedIcon />
+        <div className="night-icon">
+          <DarkModeOutlinedIcon />
+        </div>
         <div className="search-box">
           <SearchOutlinedIcon />
         </div>
-        <div className="toggle-mode"></div>
-        <div className="profile-icon"></div> */}
+        <div className="toggle-mode">
+          <img src={profile} alt="user profile"/>
+        </div>
+        <div className="profile-icon"></div>
         <div className="signout">
-          <button onClick={handleLogout}>Sign out</button>
+          <button className="logout" onClick={handleLogout}>
+            Sign out
+          </button>
         </div>
       </div>
     </div>

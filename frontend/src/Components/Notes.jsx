@@ -11,7 +11,7 @@ const Notes = () => {
   return (
     <div style={{ height:"80vh", width:"80vw", display:"flex", alignItems:"center", justifyContent:"center"}}>
 
-   <div  style={{ background: "red"}}>
+   <div  style={{ background: "rgb(154, 193, 248)"}}>
       <Calendar onChange={onChange} value={value} />
     </div>
     </div>

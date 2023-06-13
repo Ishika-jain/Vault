@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import bg from "../images/pdf.png";
 import { useParams } from "react-router-dom";
+import ToastUi from "../ui/ToastUi";
 
 
   
@@ -13,7 +14,8 @@ const UploadFiles = () => {
   const [selectedFile, setSelectedFile] = useState("");
   const [singleFiles, setSingleFiles] = useState([]);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
   const url = window.location.href;
   const parts = url.split("/");
   const lastPart = parts[parts.length - 1];
@@ -43,9 +45,13 @@ const UploadFiles = () => {
       })
       .then((res) => {
         console.log(res);
+        setToastMessage(res.data.message);
+        setShowToast(true);
       })
       .catch((err) => {
         console.log(err);
+        setToastMessage("set a valid file");
+        setShowToast(true);
       });
   };
 
@@ -134,6 +140,8 @@ const UploadFiles = () => {
         )}
         {!singleFile && <h2>multi file</h2>}
       </div>
+      {showToast && <ToastUi message={toastMessage} setShowToast={setShowToast} />}
+
     </div>
   );
 };

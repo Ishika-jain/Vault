@@ -1,20 +1,18 @@
 import React from 'react'
+import "../index.css"
 
 const featurearray = [
     {
         id: 1,
-        details: "some random text here and then more random text in the next one",
-        img: "url"
+        details: "Easily store and organize your placement-related documents in one secure location.",
     },
     {
         id: 2,
-        details: "some random text here and then more random text in the next one",
-        img: "url"
+        details: "Access your documents from anywhere, whether on your computer or mobile device.",
     } ,
     {
         id: 3,
-        details: "some random text here and then more random text in the next one",
-        img: "url"
+        details: " Enjoy a clean and intuitive interface that makes managing your documents a breeze.",
     }
 ];
 const features = () => {
@@ -25,10 +23,8 @@ const features = () => {
 
         {featurearray.map((feature)=>{
             return (
-                <div key={feature.id} style={{width:"30%", height:"15rem", margin:"10px", padding:"10px", background:"#340ba7b0", display:"flex", alignItems:"center", borderRadius:"10px"}}>
-                    <div>{feature.id}</div>
+                <div key={feature.id} className="feature-container">
                     <div>{feature.details}</div>
-                    <div>{feature.img}</div>
                 </div>
             )
         })}

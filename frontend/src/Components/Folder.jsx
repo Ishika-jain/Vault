@@ -39,27 +39,27 @@ const Folder = () => {
     <div>
       {/* Circle Profile Image, User Name, and User Designation */}
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <img src={img} alt="Profile" style={{ width: "200px", height: "200px", borderRadius: "50%", marginLeft:"5%" }} />
-        <div style={{ display: "block", width: "100%", textAlign: "center", marginBottom: "7%" }}>
-          <h2> welcome, {username}! </h2>
-          <div>
-            <textarea id="description" rows="4" value={description} onChange={handleDescriptionChange} placeholder=" Something about me... " style={{ paddingTop: "2%", marginTop: "2%", resize: "none", width:"80%" }}>
-              {" "}
+        <div style={{ display: "block", width: "100%", textAlign: "center", marginBottom: "5%" }}>
+          <h2 style={{marginBottom:"2%"}}> Welcome to Vault, {username}! </h2>
+          <div style={{ display: "flex" }}>
+            <img src={img} alt="Profile" style={{ width: "200px", height: "200px", borderRadius: "25px", marginLeft: "5%", marginRight:"10%" }} />
+
+            <textarea id="description" rows="7" value={description} onChange={handleDescriptionChange} placeholder=" Something about me... " style={{ paddingTop: "2%", marginTop: "0%", resize: "none", width: "60%", borderRadius:"25px" }}>
             </textarea>
           </div>
         </div>
       </div>
 
       {/* Resume and CV File Inputs */}
-      <div style={{ background: "", marginBottom: "6%", display: "flex", alignContent: "space-around" }}>
-      <div style={{display:"flex", flexDirection:"column", marginLeft:"5%"}}>
+      <div style={{ background: "", marginBottom: "5%", display: "flex", alignContent: "space-around" }}>
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "5%" }}>
           <label htmlFor="resume">
             <h2>Resume:</h2>
           </label>
           <input type="file" id="resume" accept=".pdf" onChange={handleResumeChange} style={{ background: "" }} />
         </div>
 
-        <div style={{display:"flex", flexDirection:"column", marginLeft:"5%"}}>
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "5%" }}>
           <label htmlFor="cv">
             <h2>CV:</h2>
           </label>
@@ -71,14 +71,14 @@ const Folder = () => {
 
       {/* Website Link and Preview */}
       <div style={{ background: "", marginBottom: "6%", display: "flex", alignContent: "space-around" }}>
-        <div style={{display:"flex", flexDirection:"column", marginLeft:"5%"}}>
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "5%" }}>
           <label htmlFor="websiteLink">
             <h2>Portfolio/Github Link:</h2>
           </label>
           <input type="text" id="websiteLink" value={websiteLink} onChange={handleWebsiteLinkChange} style={{ background: "" }} />
         </div>
 
-        <div style={{display:"flex", flexDirection:"column", marginLeft:"5%"}}>
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "5%" }}>
           <label htmlFor="websitePreview">
             <h2>LinkedIn Link:</h2>
           </label>

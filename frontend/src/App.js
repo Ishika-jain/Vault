@@ -35,7 +35,7 @@ function App() {
  
 
   return (
-    <>
+    <div style={{background:"rgb(154, 193, 248)"}}>
      <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
 
       <BrowserRouter>
@@ -56,7 +56,7 @@ function App() {
         </div>
       </BrowserRouter>
      </AuthContext.Provider>
-    </>
+    </div>
   );
 }
 

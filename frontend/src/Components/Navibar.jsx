@@ -13,7 +13,7 @@ const Navibar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("https://vaultbackend.onrender.com/api/logout");
+      await axios.post("http://localhost:8000/api/logout");
       window.location.href = "/"; // Redirect the user to the home page
       setIsLoggedIn(false);
     } catch (error) {

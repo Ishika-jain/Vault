@@ -15,6 +15,7 @@ import Notes from "./Components/Notes";
 import Track from "./Components/Track";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "./Context/AuthnContext";
+import KanbanBoard from "./Components/KanbanBoard";
 
 
 function App() {
@@ -44,13 +45,15 @@ function App() {
             <Route exact path="/" element={<LandingPage />}  />
             <Route path="/homepage/:username/*" element={isLoggedIn ? <Homepage /> : <Navigate to="/" />} >
               <Route path="main" element={<Center />} />
-              <Route path="folder" element={<Folder />} />
+              {/* <Route path="folder" element={<Folder />} /> */}
               <Route path="documents" element={<Documents />} />
               <Route path="projects" element={<Projects />} />
               <Route path="certificates" element={<Certificates />} />
               <Route path="referals" element={<Referals />} />
               <Route path="calendar" element={<Notes />} />
               <Route path="track" element={<Track />} />
+              <Route path="kanban" element={<KanbanBoard />} />
+
               </Route>
           </Routes>
         </div>

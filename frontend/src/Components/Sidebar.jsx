@@ -2,7 +2,7 @@ import React from "react";
 import "../index.css";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import ArtTrackIcon from "@mui/icons-material/ArtTrack"
 import FolderSharedIcon from "@mui/icons-material/FolderShared";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
@@ -44,12 +44,12 @@ const Sidebar = (props) => {
           </div>
           <div style={{ marginTop: "0.2rem", marginLeft: "-2rem" }}>
             <ul style={{ listStyle: "none" }}>
-              <Link to={`/homepage/${username}/folder`} className="sidebar-item">
+              {/* <Link to={`/homepage/${username}/folder`} className="sidebar-item">
                 <li className={`sidebar-list ${pathname.includes("/folder") ? "active" : ""}`}>
                   <FolderSharedIcon style={{ color: "blue" }} />
                   <span>About Me</span>
                 </li>
-              </Link>
+              </Link> */}
 
               <Link to={`/homepage/${username}/documents`} className="sidebar-item">
                 <li className={`sidebar-list ${pathname.includes("/documents") ? "active" : ""}`}>
@@ -93,12 +93,21 @@ const Sidebar = (props) => {
                 </li>
               </Link>
 
-              {/* <Link to={`/homepage/${username}/track`} className="sidebar-item">
+
+              <Link to={`/homepage/${username}/track`} className="sidebar-item">
             <li className={`sidebar-list ${pathname.includes("/track") ? "active" : ""}`}>
-              <ArtTrackIcon />
-              <span>Track</span>
+              <ArtTrackIcon style={{color :"blue"}}/>
+              <span>Notes</span>
             </li>
-          </Link> */}
+          </Link>
+
+          
+          <Link to={`/homepage/${username}/kanban`} className="sidebar-item">
+            <li className={`sidebar-list ${pathname.includes("/kanban") ? "active" : ""}`}>
+              <CalendarMonthIcon style={{color :"blue"}}/>
+              <span>Kanban</span>
+            </li>
+          </Link>
             </ul>
           </div>
         </div>

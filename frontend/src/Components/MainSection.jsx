@@ -10,10 +10,11 @@ import Referals  from "../Components/Referals";
 import Notes  from "../Components/Notes";
 import Track  from "../Components/Track";
 import { Route, Routes } from "react-router-dom";
+import KanbanBoard from "./KanbanBoard";
 
 const MainSection = () => {
   return (
-    <div style={{ paddingLeft: "12%", width:"100%", background:"#a5a5f9", height:"100vh"}}>
+    <div style={{ paddingLeft: "12%", width:"100%", background:"#a5a5f9",  minHeight:"100vh", paddingBottom:"60px"}}>
     <Navibar />
     <Routes>
       <Route path="main" element={<Center/>}/>
@@ -24,6 +25,8 @@ const MainSection = () => {
       <Route path="referals" element={<Referals/>}/>
       <Route path="calendar" element={<Notes/>}/>
       <Route path="track" element={<Track/>}/>
+      <Route path="kanban" element={<KanbanBoard/>}/>
+
 
     </Routes> 
     </div>

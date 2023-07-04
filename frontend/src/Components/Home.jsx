@@ -6,6 +6,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import LoginSignup from "../pages/LoginSignup";
 import { useNavigate } from "react-router-dom";
+import logo from "../images/logo.png";
 
 Modal.setAppElement("#root");
 const Home = () => {
@@ -19,6 +20,9 @@ const Home = () => {
   };
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  console.log(isLoggedIn);
+  console.log(user);
 
   function openModal() {
     setModalIsOpen(true);
@@ -49,7 +53,7 @@ const Home = () => {
     <div className="screen">
       <Navbar className="navbar-custom">
         <Container>
-          <Navbar.Brand href="#">My Brand</Navbar.Brand>
+          <Navbar.Brand href="#"><img src={logo} style={{width:"50px"}}></img>Vault</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav" className="screen-child">
             <Nav className="ml-auto nav-section1">

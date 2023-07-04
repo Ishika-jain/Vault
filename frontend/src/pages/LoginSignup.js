@@ -41,9 +41,10 @@ const LoginSignup = ({ onLogin, setLoginUser }) => {
           })
         onLogin();
       } catch (err) {
-        setToastMessage(err.message);
+        setToastMessage("something seems to be wrong");
         setShowToast(true);
         setError(err.message);
+        console.log(error)
       }
     }
   };

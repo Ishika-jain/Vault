@@ -18,7 +18,6 @@ const UploadFiles = () => {
   const parts = url.split("/");
   const lastPart = parts[parts.length - 1];
   const { username } = useParams();
-  const fileid = "";
 
 
   const handleCloseModal = () => {

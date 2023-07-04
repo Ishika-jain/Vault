@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./pages/LandingPage";
 import Homepage from "./pages/Homepage";
 import Center from "./Components/Center";
-import Folder from "./Components/Folder";
+// import Folder from "./Components/Folder";
 import Documents from "./Components/Documents";
 import Projects from "./Components/Projects";
 import Certificates from "./Components/Certificates";
@@ -21,19 +21,15 @@ import KanbanBoard from "./Components/KanbanBoard";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    axios.get('/api/login')
-      .then(response => {
-        // setUser(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-
- 
+  // useEffect(() => {
+  //   axios.get('/api/login')
+  //     .then(response => {
+  //       // setUser(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }, []);
 
   return (
     <div style={{background:"rgb(154, 193, 248)"}}>

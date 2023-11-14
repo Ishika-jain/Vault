@@ -33,7 +33,7 @@ const LoginSignup = ({ onLogin, setLoginUser }) => {
     const { name, email, password, confirmPassword } = user;
     if (name && email && password && (password === confirmPassword)) {
       try {
-        await axios.post("http://localhost:8000/api/signup", user)
+        await axios.post("https://vaultbackend.onrender.com/api/signup", user)
           .then(res => {
             setToastMessage(res.data.message);
             setShowToast(true);
@@ -54,7 +54,7 @@ const LoginSignup = ({ onLogin, setLoginUser }) => {
     const { email, password } = user;
     if (email && password) {
       try {
-        await axios.post("http://localhost:8000/api/login", user)
+        await axios.post("https://vaultbackend.onrender.com/api/login", user)
           .then(res => {
             setUser(res.data.user);
             setIsLoggedIn(true);

@@ -32,7 +32,7 @@ const Notes = () => {
     dateTime.setMinutes(Number(timeArr[1]));
 
     axios
-      .post('http://localhost:8000/api/scheduleEmail', {
+      .post('https://vaultbackend.onrender.com/api/scheduleEmail', {
         title,
         email,
         message,

@@ -15,7 +15,7 @@ const Track = () => {
 
   const fetchNotes = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/notes/${username}`);
+      const response = await axios.get(`https://vaultbackend.onrender.com/api/notes/${username}`);
       setNotes(response.data);
     } catch (error) {
       console.log(error.response.data);
@@ -29,7 +29,7 @@ const Track = () => {
       formData.append("content", content);
       formData.append("username", username);
 
-      await axios.post(`http://localhost:8000/api/notes`, formData);
+      await axios.post(`https://vaultbackend.onrender.com/api/notes`, formData);
 
       console.log("Note successfully posted");
 

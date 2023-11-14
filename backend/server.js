@@ -11,7 +11,6 @@ const session = require("express-session");
 const nodemailer = require("nodemailer");
 const schedule = require("node-schedule");
 
-//get the .env file
 require("dotenv").config();
 
 const app = express();
@@ -28,7 +27,6 @@ app.use(
   })
 );
 
-//uploads folder storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads");
@@ -38,7 +36,6 @@ const storage = multer.diskStorage({
   },
 });
 
-//file filter
 const filefilter = (req, file, cb) => {
   if (file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg" || file.mimetype === "application/pdf") {
     cb(null, true);
@@ -60,7 +57,6 @@ const userSchema = new Schema({
 
 const User = mongoose.model("User", userSchema);
 
-//connect to mongo atlas
 mongoose
   .connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => {
@@ -137,8 +133,8 @@ router.post("/singleFile", upload.single("file"), async (req, res) => {
       filePath: req.file.path,
       fileType: req.file.mimetype,
       fileSize: req.file.size,
-      username: req.body.username, // Access the username from the request body
-      lastPart: req.body.lastPart, // Access the lastPart from the request body
+      username: req.body.username, 
+      lastPart: req.body.lastPart, 
     });
 
     await file.save();
